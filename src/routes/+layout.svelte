@@ -1,19 +1,19 @@
-<script>
+<script lang="ts">
     import "../app.css";
     import Header from '../components/Header.svelte';
     import Footer from '../components/Footer.svelte';
 
-    let y;
-    let innerHeight;
-    let innerWidth;
+    let y: number = 0;
+    let innerHeight: number = 0;
+    let innerWidth: number = 0;
 
-    function goTop(){
+    function goTop() {
         document.body.scrollIntoView();
     }
 </script>
 
 <div class="relative flex flex-col max-w-[1440px] mx-auto w-full text-sm sm:text-base min-h-screen top-4">
-    <div class={"fixed bottom-0 w-full duration-200 flex px-10 z-[10]"+
+    <div class={"fixed bottom-0 w-full duration-200 flex px-10 z-[10] " +
         (y > 0 
             ? "opacity-100 pointer-events-auto" 
             : "opacity-0 pointer-events-none")
